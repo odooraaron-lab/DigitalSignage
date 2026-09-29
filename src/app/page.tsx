@@ -5,6 +5,7 @@ import { PRICES, TRIAL_DAYS, SUPPORT_EMAIL, PRODUCT, APP_URL } from '@/lib/confi
 import { PROMO_CSS } from '@/lib/promo';
 import { TvDemo, type DemoSlide } from '@/components/TvDemo';
 import { INDUSTRIES } from '@/lib/industries';
+import { RemoteManage } from '@/components/RemoteManage';
 import { pageMeta, JsonLd, faqLd, productLd, organizationLd } from '@/lib/seo';
 
 export const metadata: Metadata = pageMeta(
@@ -25,6 +26,7 @@ function Ico({ d, c }: { d: string; c: string }) {
 }
 
 const FAQ: [string, string][] = [
+  ['Can I update the screens when I’m not at the venue?', 'Yes. Your dashboard works in any web browser, on your phone, tablet or laptop, from anywhere with internet. Upload adverts, change prices or pause a special and every TV updates within about a minute.'],
   ['What do I need?', 'A TV with a web browser, or any TV with a cheap streaming stick (Chromecast with Google TV or Fire TV Stick). Plus Wi-Fi. No special player box, no installer.'],
   ['How do I connect a TV?', `On the TV’s browser, go to ${APP_URL.replace(/^https?:\/\//, '')}/tv. It shows a 6-digit code. Type that code into your dashboard and the TV starts playing. It remembers itself after that, even after a power cut.`],
   ['How many TVs can I have?', 'One subscription covers every TV in your venue (up to 20). They all play the same playlist.'],
@@ -45,14 +47,14 @@ export default function Home() {
           <div>
             <span className="eyebrow">Your Venue, Your Vibe</span>
             <h1>Powerful digital signage <span className="hl">that sells</span></h1>
-            <p className="lede">Promote high-margin food and drink specials, events and announcements on the TVs you already have. All managed from one platform, for a ridiculously low price.</p>
+            <p className="lede">Promote high-margin food and drink specials, events and announcements on the TVs you already have. All managed from your phone or laptop, wherever you are, for a ridiculously low price.</p>
             <div className="row">
               <Link className="btn big" href="/start">Get started</Link>
               <a className="btn big ghost" href="#pricing">See pricing</a>
             </div>
             <ul className="lp-promise">
               <li>✓ Works on the TVs you have</li>
-              <li>✓ Change it from your phone</li>
+              <li>✓ Update from your phone or laptop</li>
               <li>✓ Schedule by day and hour</li>
             </ul>
           </div>
@@ -79,6 +81,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <RemoteManage />
 
       <section className="section wrap" id="venues">
         <div className="section-head"><h2>Made for your kind of venue</h2><Link href="/for" className="small">See all →</Link></div>
