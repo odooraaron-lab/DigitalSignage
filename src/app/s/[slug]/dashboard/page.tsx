@@ -41,7 +41,7 @@ export default async function DashboardPage({ params }: { params: { slug: string
   return (
     <>{head}
       <Dashboard
-        venue={{ slug: v.slug, venue_name: v.venue_name, status: v.status, timezone: v.timezone, slide_seconds: v.slide_seconds, billing: !!v.stripe_customer_id }}
+        venue={{ slug: v.slug, venue_name: v.venue_name, status: v.status, timezone: v.timezone, slide_seconds: v.slide_seconds, billing: !!(v.stripe_customer_id || v.stripe_subscription_id || v.checkout_session_id) }}
         slides={JSON.parse(JSON.stringify(slides))}
         screens={JSON.parse(JSON.stringify(screens))}
         tvAddress={`${APP_URL.replace(/^https?:\/\//, '')}/tv`}
