@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { MobileBuyBar } from '@/components/MobileBuyBar';
+import { PRICES } from '@/lib/config';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
 import { INDUSTRIES } from '@/lib/industries';
 import { pageMeta, JsonLd, breadcrumbLd } from '@/lib/seo';
@@ -31,6 +33,7 @@ export default function ForHub() {
         </div>
       </main>
       <SiteFoot />
+      <MobileBuyBar title={PRICES.monthly.label} note="Up to 20 TVs · cancel any time" href="/start" label="Get started" />
     </div>
   );
 }

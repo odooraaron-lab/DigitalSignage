@@ -342,7 +342,7 @@ form.inline { display: inline; }
   .bubble.b1 { display: none; }
   .bubble.b2 { top: -26px; right: 4px; }
   .bubble.b3 { left: 8px; bottom: -20px; }
-  .lp-hero .row .btn { width: 100%; }
+  .lp-hero .row .btn { width: 100%; padding: 0 8px; font-size: 14px; white-space: nowrap; }
 }
 .wordmark > span { white-space: nowrap; }
 
@@ -505,3 +505,135 @@ form.inline { display: inline; }
 .cmp tbody th { font-weight: 800; width: 22%; }
 .cmp .cmp-us, .cmp thead th:nth-child(2) { background: var(--teal-soft); }
 .cmp .cmp-us { font-weight: 800; color: #0B5A54; }
+
+/* ═══════════ Phones: denser layout, swipe rails, one tap from buying ═══════════ */
+.m-buybar { display: none; }
+@media (max-width: 640px) {
+  body { font-size: 15px; line-height: 1.5; }
+  .wrap { width: calc(100% - 28px); }
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 17px; }
+  p { margin-bottom: .8em; }
+  .section { padding: 28px 0; }
+  .section-head { margin-bottom: 14px; gap: 6px; }
+  .section-head p { font-size: 14px; }
+  .eyebrow { font-size: 12px; padding: 4px 10px; margin-bottom: 10px; }
+  .btn { min-height: 44px; font-size: 15px; padding: 0 16px; }
+  .lp .btn.big, .btn.big { min-height: 48px; padding: 0 16px; font-size: 15.5px; }
+  .row { gap: 8px; }
+  .announce { font-size: 12px; padding: 6px 10px; }
+  .site-head { padding: 10px 0; }
+  .lp .kicker { font-size: 12px; margin-bottom: 6px; }
+
+  /* Hero: short and punchy, two buttons side by side, promises as a 2×2 grid */
+  .lp-hero { padding: 6px 0 22px; }
+  .lp-hero h1 { font-size: 33px; margin-bottom: 10px; }
+  .lp-hero .lede { font-size: 15.5px; margin-bottom: 14px; }
+  .lp-hero-in { gap: 18px; }
+  .lp-hero .row { display: grid; grid-template-columns: 1fr 1fr; }
+  .lp-hero .row .btn { width: 100%; padding: 0 8px; font-size: 14px; white-space: nowrap; }
+  .lp-promise { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; font-size: 12.5px; margin-top: 12px; }
+
+  /* Small cards two-up */
+  .features { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .feature { padding: 14px; border-radius: 18px; }
+  .feature .ico { width: 34px; height: 34px; border-radius: 11px; margin-bottom: 8px; }
+  .feature .ico svg { width: 19px; height: 19px; }
+  .feature h3 { font-size: 15.5px; margin-bottom: 4px; }
+  .feature p { font-size: 13px; line-height: 1.45; }
+
+  /* Steps: compact numbered rows */
+  .steps { grid-template-columns: 1fr !important; gap: 8px; }
+  .steps li { display: grid; grid-template-columns: 32px 1fr; column-gap: 12px; align-items: start; padding: 12px 14px; border-radius: 16px; }
+  .steps li::before { width: 32px; height: 32px; font-size: 15px; margin: 0; grid-row: span 2; }
+  .steps h3 { font-size: 15.5px; margin: 5px 0 2px; }
+  .steps p { font-size: 13.5px; }
+
+  /* Plans side by side */
+  .price-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .price-card { padding: 20px 12px 14px; border-radius: 20px; gap: 6px; }
+  .price-card h3 { font-size: 15px; margin: 0; }
+  .price, .price-card .price { font-size: 19px; }
+  .price-card ul { font-size: 12.5px; gap: 3px; margin: 2px 0 6px; }
+  .price-card li::before { margin-right: 5px; }
+  .price-card .btn { font-size: 13.5px; min-height: 40px; padding: 0 8px; }
+  .price-card .tag { left: 12px; top: -11px; font-size: 11px; padding: 2px 10px; }
+  .price-card.dark { grid-column: 1 / -1; }
+
+  /* FAQ */
+  .faq details { padding: 0 14px; border-radius: 14px; margin-bottom: 6px; }
+  .faq summary { padding: 11px 0; font-size: 14.5px; }
+  .faq details p { font-size: 14px; }
+
+  .cta-band { padding: 22px 20px; border-radius: 22px; gap: 14px; }
+  .cta-band h2 { font-size: 22px; }
+  .cta-band p { font-size: 14px; }
+
+  /* Footer: three tight columns, room for the buy bar */
+  .site-foot { margin-top: 36px; }
+  .site-foot .wrap { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 18px 12px; padding: 28px 0 96px; font-size: 13px; }
+  .site-foot .brandcol { grid-column: 1 / -1; }
+  .site-foot .brandcol p { font-size: 13px; }
+  .site-foot h4 { font-size: 14px; margin-bottom: 8px; }
+  .site-foot a { font-size: 12.5px; margin-bottom: 6px; line-height: 1.3; }
+  .site-foot .fine { grid-column: 1 / -1; }
+
+  /* Swipe rails: the next card peeks in so people know to swipe */
+  .m-swipe { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; margin-left: -14px; margin-right: -14px; padding: 2px 14px 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .m-swipe::-webkit-scrollbar { display: none; }
+  .m-swipe > * { flex: 0 0 78%; scroll-snap-align: start; min-width: 0; }
+  .m-chips { flex-wrap: nowrap !important; overflow-x: auto; margin-left: -14px; margin-right: -14px; padding: 2px 14px 6px; scrollbar-width: none; }
+  .m-chips::-webkit-scrollbar { display: none; }
+  .m-chips > * { flex: none; white-space: nowrap; }
+  .m-hint { display: block; font-size: 12px; font-weight: 800; color: var(--muted); margin: -6px 0 8px; }
+
+  /* Sticky buy bar */
+  .m-buybar { display: flex; position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 60; align-items: center; justify-content: space-between; gap: 10px; background: var(--ink); color: #fff; border-radius: 18px; padding: 9px 9px 9px 16px; box-shadow: 0 14px 30px -8px rgba(20, 12, 30, .55); transform: translateY(160%); transition: transform .3s ease; }
+  .m-buybar.on { transform: none; }
+  .m-buybar b { display: block; font-family: var(--display); font-size: 16px; line-height: 1.15; }
+  .m-buybar small { display: block; font-size: 11.5px; opacity: .8; line-height: 1.3; }
+  .m-buybar .btn { flex: none; min-height: 42px; background: var(--lamp); border-color: var(--lamp); color: var(--ink); font-size: 14.5px; }
+}
+@media (min-width: 641px) { .m-hint { display: none; } }
+@media (max-width: 640px) {
+  /* Digital Signage specifics */
+  .sg-wall { padding-top: 4px; }
+  .sg-tv { padding: 8px; border-radius: 14px; }
+  .sg-bar { height: 12px; margin-top: 14px; }
+  .sg-benefits.m-swipe > * { flex-basis: 74%; }
+  .rm-grid { gap: 16px; }
+  .rm h2 { font-size: 24px; }
+  .rm-lede { font-size: 14.5px !important; }
+  .rm .rm-points, #why .rm-points, .lp-dark .sg-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; margin: 12px -14px 0; padding: 2px 14px 10px; scrollbar-width: none; }
+  .rm .rm-points::-webkit-scrollbar, #why .rm-points::-webkit-scrollbar, .lp-dark .sg-list::-webkit-scrollbar { display: none; }
+  .rm .rm-points li, #why .rm-points li { flex: 0 0 70%; scroll-snap-align: start; background: var(--wash); border-radius: 16px; padding: 12px 12px 12px 42px; font-size: 13.5px; line-height: 1.45; }
+  .rm .rm-points li::before, #why .rm-points li::before { left: 12px; top: 13px; }
+  .lp-dark { padding: 30px 0; }
+  .lp-dark h2 { font-size: 25px; }
+  .sg-split { gap: 6px; }
+  .lp-dark .sg-list li { flex: 0 0 70%; scroll-snap-align: start; background: rgba(255, 255, 255, .08); border-radius: 16px; padding: 12px 12px 12px 36px; font-size: 13.5px; }
+  .lp-dark .sg-list li::before { left: 13px; top: 12px; }
+  .rm-devices { padding: 0 48px 18px 0; }
+  .rm-phone { width: 128px; }
+  .tp-body { gap: 18px; }
+  .tp-hero h1 { font-size: 29px; }
+  .tp-main h2 { font-size: 21px; }
+  .tp-main section { margin-bottom: 18px; }
+  .calc { padding: 16px; gap: 10px; }
+  .calc-grid strong { font-size: 24px; }
+  .calc-grid > div { padding: 10px; }
+  .sg-industries { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .sg-industry { padding: 14px; }
+  .sg-industry h2 { font-size: 16px; }
+  .sg-industry p { font-size: 12.5px; }
+  .sg-two-col { gap: 18px; }
+  .sg-tips { font-size: 14px; }
+  .cmp th, .cmp td { padding: 10px; font-size: 13px; }
+  .sg-chip { padding: 8px 14px; font-size: 14px; }
+}
+@media (max-width: 380px) {
+  .site-head .btn.small { font-size: 13px; padding: 0 12px; min-height: 36px; }
+  .site-head .logo { gap: 6px; }
+  .lp-hero .row .btn { font-size: 13px; padding: 0 6px; }
+}

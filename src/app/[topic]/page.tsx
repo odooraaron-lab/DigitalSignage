@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MobileBuyBar } from '@/components/MobileBuyBar';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
@@ -82,7 +83,7 @@ export default function TopicPage({ params }: { params: { topic: string } }) {
 
       <section className="section wrap">
         <h2 style={{ fontSize: 26 }}>Read next</h2>
-        <div className="sg-chips">
+        <div className="sg-chips m-chips">
           {t.related.map((r) => { const l = linkFor(r); return <Link key={r} href={l.href} className="sg-chip">{l.text}</Link>; })}
           {INDUSTRIES.slice(0, 4).map((i) => <Link key={i.slug} href={`/for/${i.slug}`} className="sg-chip">{i.name}</Link>)}
         </div>
@@ -95,6 +96,7 @@ export default function TopicPage({ params }: { params: { topic: string } }) {
         </div>
       </section>
       <SiteFoot />
+      <MobileBuyBar title={PRICES.monthly.label} note="Up to 20 TVs · cancel any time" href="/start" label="Get started" />
     </div>
   );
 }
