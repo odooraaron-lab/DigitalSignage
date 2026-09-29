@@ -116,7 +116,7 @@ export default function Home() {
           <ul className="sg-list">
             <li><b>Instant updates.</b> Change a price and every TV shows it within a minute.</li>
             <li><b>Day and hour scheduling.</b> Breakfast specials in the morning, cocktails at night.</li>
-            <li><b>As many TVs as you need.</b> Bar, dining room, window, courtyard: all on one plan.</li>
+            <li><b>Up to 20 TVs.</b> Bar, dining room, window, courtyard: all on one plan.</li>
             <li><b>Keeps playing offline.</b> A Wi-Fi hiccup won’t leave you with a blank screen.</li>
             <li><b>Online status.</b> See at a glance which TVs are on and playing.</li>
           </ul>
@@ -129,7 +129,7 @@ export default function Home() {
           <div className="price-card">
             <h3>Monthly</h3>
             <div className="price">{PRICES.monthly.label}</div>
-            <ul><li>Unlimited TVs in your venue (up to 20)</li><li>Images, video and specials</li><li>Day and hour scheduling</li><li>Cancel any time</li></ul>
+            <ul><li>Up to 20 TVs in your venue</li><li>Images, video and specials</li><li>Day and hour scheduling</li><li>Cancel any time</li></ul>
             <Link className="btn ghost" href="/start?plan=monthly">Choose monthly</Link>
           </div>
           <div className="price-card best">
