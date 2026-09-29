@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MobileBuyBar } from '@/components/MobileBuyBar';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
 import { CostCalculator } from '@/components/CostCalculator';
 import { PRICES, TRIAL_DAYS } from '@/lib/config';
@@ -75,6 +76,7 @@ export default function Pricing() {
         <div className="faq">{FAQ.map(([q, a]) => <details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div>
       </section>
       <SiteFoot />
+      <MobileBuyBar title={PRICES.monthly.label} note="Up to 20 TVs · no setup fee" href="/start" label="Get started" hideOn=".price-grid" />
     </div>
   );
 }

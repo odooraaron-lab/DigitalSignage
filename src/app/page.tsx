@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MobileBuyBar } from '@/components/MobileBuyBar';
 import type { Metadata } from 'next';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
 import { PRICES, TRIAL_DAYS, SUPPORT_EMAIL, PRODUCT, APP_URL } from '@/lib/config';
@@ -68,7 +69,7 @@ export default function Home() {
       </section>
 
       <section className="section wrap">
-        <div className="features sg-benefits">
+        <div className="features sg-benefits m-swipe">
           <div className="feature">
             <div className="ico" style={{ background: 'var(--accent-soft)' }}><Ico c="#C23A64" d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 7H6M10 21h.01M18 21h.01" /></div>
             <h3>Sell more products</h3>
@@ -129,7 +130,7 @@ export default function Home() {
 
       <section className="section wrap" id="venues">
         <div className="section-head"><h2>Made for your kind of venue</h2><Link href="/for" className="small">See all →</Link></div>
-        <div className="sg-chips">
+        <div className="sg-chips m-chips">
           {INDUSTRIES.map((i) => <Link key={i.slug} href={`/for/${i.slug}`} className="sg-chip">{i.name}</Link>)}
         </div>
       </section>
@@ -195,6 +196,7 @@ export default function Home() {
         </div>
       </section>
       <SiteFoot />
+      <MobileBuyBar title={`${PRICES.monthly.label}`} note="Up to 20 TVs · cancel any time" href="/start" label="Get started" hideOn="#pricing" />
     </div>
   );
 }

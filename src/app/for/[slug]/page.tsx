@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MobileBuyBar } from '@/components/MobileBuyBar';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
@@ -106,7 +107,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
 
       <section className="section wrap">
         <h2 style={{ fontSize: 28 }}>Also made for</h2>
-        <div className="sg-chips">{others.map((o) => <Link key={o.slug} href={`/for/${o.slug}`} className="sg-chip">{o.name}</Link>)}</div>
+        <div className="sg-chips m-chips">{others.map((o) => <Link key={o.slug} href={`/for/${o.slug}`} className="sg-chip">{o.name}</Link>)}</div>
       </section>
 
       <section className="section wrap">
@@ -116,6 +117,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
       <SiteFoot />
+      <MobileBuyBar title={PRICES.monthly.label} note="Up to 20 TVs · cancel any time" href="/start" label="Get started" />
     </div>
   );
 }
