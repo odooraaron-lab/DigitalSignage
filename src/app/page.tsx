@@ -12,7 +12,7 @@ import { pageMeta, JsonLd, faqLd, productLd, organizationLd } from '@/lib/seo';
 export const metadata: Metadata = pageMeta(
   '',
   'Digital Signage NZ: Cheap, Easy TV Screens for Your Venue | myQR',
-  'Affordable, easy digital signage for NZ bars, cafés, gyms, clubs and shops. Use the TVs you have, update from your phone. One flat price: $39/month for up to 20 TVs.',
+  'Affordable, easy digital signage for NZ venues. Runs in your TV’s web browser: no app, no login on the TV, no extra hardware. $39/month for up to 20 TVs.',
 );
 
 const DEMO: DemoSlide[] = [
@@ -29,6 +29,8 @@ function Ico({ d, c }: { d: string; c: string }) {
 const FAQ: [string, string][] = [
   ['Can I update the screens when I’m not at the venue?', 'Yes. Your dashboard works in any web browser, on your phone, tablet or laptop, from anywhere with internet. Upload adverts, change prices or pause a special and every TV updates within about a minute.'],
   ['How much does digital signage cost?', 'With us: $39 NZD a month or $399 a year for up to 20 TVs in one venue, using the TVs you already have. No setup fee, no installer and no per-screen charges.'],
+  ['Do I need to install an app or log in on the TV?', 'No. It runs in the TV’s web browser. Open the address, type the code it shows into your dashboard, and it plays. No app, no account and no password on the TV.'],
+  ['Do I need to buy a media player or other hardware?', 'No. Use the TVs you already have. If a TV is too old for its browser, a Chromecast or Fire TV Stick will do, but most smart TVs work as they are.'],
   ['What do I need?', 'A TV with a web browser, or any TV with a cheap streaming stick (Chromecast with Google TV or Fire TV Stick). Plus Wi-Fi. No special player box, no installer.'],
   ['How do I connect a TV?', `On the TV’s browser, go to ${APP_URL.replace(/^https?:\/\//, '')}/tv. It shows a 6-digit code. Type that code into your dashboard and the TV starts playing. It remembers itself after that, even after a power cut.`],
   ['How many TVs can I have?', 'One subscription covers every TV in your venue (up to 20). They all play the same playlist.'],
@@ -55,9 +57,10 @@ export default function Home() {
               <a className="btn big ghost" href="#pricing">See pricing</a>
             </div>
             <ul className="lp-promise">
-              <li>✓ Works on the TVs you have</li>
+              <li>✓ Runs in your TV’s web browser</li>
+              <li>✓ No app or login on the TV</li>
+              <li>✓ No extra hardware to buy</li>
               <li>✓ Update from your phone or laptop</li>
-              <li>✓ Schedule by day and hour</li>
             </ul>
           </div>
           <TvDemo slides={DEMO} />
@@ -85,6 +88,23 @@ export default function Home() {
       </section>
 
       <RemoteManage />
+
+      <section className="section wrap" id="browser">
+        <div className="section-head" style={{ display: 'block' }}>
+          <span className="eyebrow">No app. No login. No player box.</span>
+          <h2>It runs in your TV’s web browser</h2>
+          <p className="muted rm-lede" style={{ maxWidth: 720 }}>Other digital signage often means an app on every screen, a media player behind every TV, or an installer. Ours is a web page: open it on the TV you already have, type a code into your dashboard, and your adverts start playing.</p>
+        </div>
+        <ol className="steps">
+          <li><h3>Open the address</h3><p>On the TV’s web browser, go to <b>{APP_URL.replace(/^https?:\/\//, '')}/tv</b>. No app to download, no account to sign in to.</p></li>
+          <li><h3>Type the code</h3><p>The TV shows a 6-digit code. Enter it in your dashboard on your phone or laptop.</p></li>
+          <li><h3>That’s it</h3><p>The TV starts playing and remembers itself, even after a power cut. No extra hardware, no installer.</p></li>
+        </ol>
+        <div className="row" style={{ marginTop: 18 }}>
+          <Link className="btn ghost" href="/browser-based-digital-signage">How browser-based signage works</Link>
+          <Link className="btn ghost" href="/digital-signage-no-extra-hardware">No extra hardware</Link>
+        </div>
+      </section>
 
       <section className="section wrap" id="why">
         <div className="tp-body">
