@@ -33,7 +33,9 @@ export async function POST(req: Request) {
   }
 
   const product = process.env.HQ_PRODUCT || 'signage';
-  const session = await stripe().checkout.sessions.create({
+  let session;
+  try {
+    session = await stripe().checkout.sessions.create({
     mode: 'subscription',
     line_items: [{ price: PRICES[plan].id, quantity: 1 }],
     customer_email: email,
@@ -45,7 +47,13 @@ export async function POST(req: Request) {
     },
     success_url: `${APP_URL}/start/done?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${APP_URL}/start?cancelled=1`,
-  });
+    });
+  } catch (e: any) {
+    // Usually set-up: a wrong price ID, a test-mode price with a live key, or a key without Checkout access.
+    console.error('stripe checkout failed', e?.type, e?.code, e?.message);
+    await sql`delete from ds_venues where slug = ${slug} and status = 'pending'`;
+    return Response.json({ error: `Payment couldn’t start: ${e?.message || 'Stripe error'}` }, { status: 502 });
+  }
   await sql`update ds_venues set checkout_session_id = ${session.id} where slug = ${slug}`;
   return Response.json({ url: session.url });
 }
