@@ -1,9 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { PRODUCT, BRAND } from '@/lib/config';
+import { PRODUCT, BRAND, APP_URL } from '@/lib/config';
 
 export const metadata: Metadata = {
-  title: `${PRODUCT} by ${BRAND}`,
+  metadataBase: new URL(APP_URL),
+  title: { default: `${PRODUCT} by ${BRAND}`, template: `%s | ${BRAND} ${PRODUCT}` },
   description: 'Digital signage for bars, cafés and venues. Put specials, events and announcements on your TVs, managed from one dashboard.',
 };
 

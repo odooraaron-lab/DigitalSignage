@@ -3,41 +3,22 @@ import type { Metadata } from 'next';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
 import { PRICES, TRIAL_DAYS, SUPPORT_EMAIL, PRODUCT, APP_URL } from '@/lib/config';
 import { PROMO_CSS } from '@/lib/promo';
+import { TvDemo, type DemoSlide } from '@/components/TvDemo';
+import { INDUSTRIES } from '@/lib/industries';
+import { pageMeta, JsonLd, faqLd, productLd, organizationLd } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: `${PRODUCT} for bars, cafés and venues | myQR`,
-  description: 'Put your specials, events and announcements on the TVs in your venue. Upload adverts, schedule them by day and hour, and manage every screen from one dashboard.',
-  alternates: { canonical: APP_URL },
-};
+export const metadata: Metadata = pageMeta(
+  '',
+  'Digital Signage NZ for Bars, Cafés, Gyms & Retail | myQR',
+  'Cloud digital signage for NZ venues. Put specials, events and announcements on the TVs you already have, scheduled by day and hour. From $39 a month.',
+);
 
-const DEMO = [
+const DEMO: DemoSlide[] = [
   { style: 'berry', head: 'Happy Hour Pints', price: '$8', detail: 'Weekdays 4–6pm' },
   { style: 'night', head: 'Quiz Night', price: 'Thursday', detail: 'Teams of up to 6. Starts 7pm.' },
   { style: 'sun', head: 'Loaded Fries', price: '$12', detail: 'Add pulled pork +$4' },
   { style: 'fresh', head: 'Espresso Martini', price: '$15', detail: 'Our bartender’s favourite' },
 ];
-
-/** A TV on the wall, cycling through a few example specials (CSS only). */
-function TvDemo() {
-  return (
-    <div className="sg-wall" aria-hidden="true">
-      <div className="sg-tv">
-        <div className="sg-tv-screen">
-          {DEMO.map((d, i) => (
-            <div key={d.head} className={`promo ${d.style} sg-slide`} style={{ animationDelay: `${i * 4}s` }}>
-              <div className="p-dot d1" /><div className="p-dot d2" />
-              <h2 className="p-head">{d.head}</h2>
-              <div className="p-price">{d.price}</div>
-              <div className="p-detail">{d.detail}</div>
-              <div className="p-venue">The Local</div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="sg-bar" />
-    </div>
-  );
-}
 
 function Ico({ d, c }: { d: string; c: string }) {
   return <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>;
@@ -57,6 +38,7 @@ export default function Home() {
   return (
     <div className="lp">
       <style dangerouslySetInnerHTML={{ __html: PROMO_CSS }} />
+      <JsonLd data={[organizationLd(), productLd(), faqLd(FAQ)]} />
       <SiteHead />
       <section className="lp-hero">
         <div className="wrap lp-hero-in">
@@ -74,7 +56,7 @@ export default function Home() {
               <li>✓ Schedule by day and hour</li>
             </ul>
           </div>
-          <TvDemo />
+          <TvDemo slides={DEMO} />
         </div>
       </section>
 
@@ -95,6 +77,13 @@ export default function Home() {
             <h3>Influence customer decisions</h3>
             <p>Show the right offer at the right time: coffee and cake in the afternoon, happy hour at five, dessert after dinner. Set it once and it runs itself.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="section wrap" id="venues">
+        <div className="section-head"><h2>Made for your kind of venue</h2><Link href="/for" className="small">See all →</Link></div>
+        <div className="sg-chips">
+          {INDUSTRIES.map((i) => <Link key={i.slug} href={`/for/${i.slug}`} className="sg-chip">{i.name}</Link>)}
         </div>
       </section>
 
