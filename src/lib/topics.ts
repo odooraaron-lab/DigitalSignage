@@ -17,6 +17,83 @@ export type Topic = {
 
 export const TOPICS: Topic[] = [
   {
+    slug: 'browser-based-digital-signage',
+    nav: 'Browser-based digital signage',
+    title: 'Browser-Based Digital Signage: No App or Login on the TV | myQR',
+    description: 'Digital signage that runs in your TV’s web browser. No app to install, no account or login on the TV, no media player. Open a web address, type a code, done.',
+    kicker: 'Runs in the browser',
+    h1: 'Digital signage that runs in your TV’s web browser',
+    intro: 'No app to download, no account to sign in to on the TV, no player box to set up. If your TV has a web browser, it can show your adverts: open one web address, type a 6-digit code into your dashboard, and it starts playing.',
+    sections: [
+      {
+        h2: 'Nothing to install on the TV',
+        body: ['Most digital signage needs an app installed on every screen, or a dedicated media player, and each one signed in to an account. Ours is a web page. The TV opens digitalsignage.myqr.co.nz/tv, shows a code, and once you enter that code in your dashboard the TV is linked to your venue. There’s no username or password on the TV, ever.'],
+        list: ['No app store, no downloads, no updates to install', 'No account, email or password on the TV', 'No media player box', 'Works on the TV’s built-in browser, or any streaming stick with a browser'],
+      },
+      {
+        h2: 'Why browser-based is better for a venue',
+        body: [],
+        list: [
+          'Staff can’t get locked out: there’s no login on the TV to forget.',
+          'Replacing a TV takes a minute: open the address on the new one and type the code.',
+          'Updates happen on our side, so every TV always has the latest version.',
+          'It runs on old TVs too: the player is built for older, slower TV browsers.',
+          'Nothing is stored on the TV except a note of which venue it belongs to.',
+        ],
+      },
+      {
+        h2: 'How the TV stays linked',
+        body: ['After pairing, the TV remembers it belongs to your venue. After a power cut, just reopen the address and it goes straight back to your adverts, no code needed. If you ever disconnect a TV from your dashboard, it immediately goes back to showing a new code.'],
+      },
+      {
+        h2: 'You manage it from any browser too',
+        body: ['Your dashboard is a website as well, so you can upload adverts and change specials from your phone, tablet or laptop, anywhere. The only account is yours, the venue owner’s, and it’s created when you sign up.'],
+      },
+    ],
+    faq: [
+      ['Do I need an account on the TV?', 'No. The TV just opens a web address and shows a code. You enter that code in your dashboard to link it. No login, app or password on the TV.'],
+      ['Do I need an account at all?', 'The venue owner has one dashboard, which is set up when you subscribe. Your TVs and your staff don’t need their own accounts.'],
+      ['Which browsers work?', 'The built-in browser on most smart TVs, Chrome or another browser on Chromecast with Google TV and Android TV, Silk on Fire TV Stick, and Chrome, Edge, Safari or Firefox on a computer.'],
+    ],
+    related: ['digital-signage-no-extra-hardware', 'digital-signage-on-any-tv', 'easy-digital-signage'],
+  },
+  {
+    slug: 'digital-signage-no-extra-hardware',
+    nav: 'No extra hardware',
+    title: 'Digital Signage with No Extra Hardware: Use Your Existing TVs | myQR',
+    description: 'No media players, no commercial screens, no installer. Run digital signage on the TVs you already have, with nothing extra to buy. $39/month for up to 20 TVs.',
+    kicker: 'Use your existing hardware',
+    h1: 'Digital signage with no extra hardware to buy',
+    intro: 'Many digital signage providers sell you a package: commercial screens, a media player for every screen, mounting and installation, then software on top. If your TVs are already on the wall, you’ve already paid for the expensive part. We just put your adverts on them.',
+    calculator: true,
+    sections: [
+      {
+        h2: 'What other setups often make you buy',
+        body: ['Traditional digital signage is priced as hardware plus installation plus software. Those extra costs are often bigger than the software itself, and they multiply with every screen.'],
+        list: ['A media player or “signage box” behind every screen', 'Commercial-grade displays', 'Brackets, cabling and an installer’s call-out', 'Replacement players when they fail or go out of support'],
+      },
+      {
+        h2: 'What you need with us',
+        body: ['A TV with a web browser and a Wi-Fi connection. That’s it. Almost every smart TV sold in the last several years qualifies. If yours doesn’t, a streaming stick you can buy at any electronics store turns it into one, and you might already have one in a drawer.'],
+        list: ['Your existing smart TVs', 'Your existing Wi-Fi', 'Optional: a Chromecast with Google TV or Fire TV Stick for older TVs', 'Optional: any laptop or mini PC with HDMI'],
+      },
+      {
+        h2: 'Simple setup, no installer',
+        body: ['Open digitalsignage.myqr.co.nz/tv on the TV, type the 6-digit code into your dashboard, and the TV starts playing. It takes about a minute per TV, and you can do it yourself during a quiet shift.'],
+      },
+      {
+        h2: 'One price, no hardware markup',
+        body: ['$39 a month or $399 a year covers up to 20 TVs in one venue. We don’t sell hardware, so there’s nothing to upsell you on.'],
+      },
+    ],
+    faq: [
+      ['Do I need a media player?', 'No. The TV’s own web browser is the player. Older TVs can use a streaming stick instead.'],
+      ['Do I need commercial screens?', 'No. Normal TVs work well for menus, specials and events. Just turn off the TV’s sleep timer so it stays on.'],
+      ['Do you sell hardware?', 'No. Use what you have. If you need a streaming stick, any electronics store sells them.'],
+    ],
+    related: ['browser-based-digital-signage', 'cheap-digital-signage', 'digital-signage-cost'],
+  },
+  {
     slug: 'cheap-digital-signage',
     nav: 'Cheap digital signage',
     title: 'Cheap Digital Signage NZ: Affordable TV Screens from $39/month | myQR',
