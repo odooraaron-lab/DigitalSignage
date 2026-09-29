@@ -23,7 +23,7 @@ export default function Start({ searchParams }: { searchParams: { cancelled?: st
             <h2 style={{ fontSize: 24 }}>What you get</h2>
             <ul className="ticks">
               <li>Your own dashboard at your venue’s address</li>
-              <li>As many TVs as you need (up to 20)</li>
+              <li>Up to 20 TVs in your venue</li>
               <li>Upload images and videos, or build specials in seconds</li>
               <li>Schedule each slide by day and hour</li>
               <li>Keeps playing if the internet drops</li>
