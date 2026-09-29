@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PRODUCT, BRAND, APP_URL, SUPPORT_EMAIL } from '@/lib/config';
 import { INDUSTRIES } from '@/lib/industries';
+import { TOPICS } from '@/lib/topics';
 
 /** The product name with the umbrella brand in tiny letters underneath. */
 export function Wordmark() {
@@ -27,7 +28,7 @@ export function SiteHead({ cta = true }: { cta?: boolean }) {
         <nav className="site-nav" aria-label="Main">
           <a href={`${APP_URL}/#how`}>How it works</a>
           <a href={`${APP_URL}/for`}>Who it’s for</a>
-          <a href={`${APP_URL}/#pricing`}>Pricing</a>
+          <a href={`${APP_URL}/pricing`}>Pricing</a>
         </nav>
         {cta ? <Link className="btn small" href="/start">Get started</Link> : <span />}
       </header>
@@ -53,6 +54,11 @@ export function SiteFoot() {
         <div>
           <h4>Who it’s for</h4>
           {INDUSTRIES.map((i) => <a key={i.slug} href={`${APP_URL}/for/${i.slug}`}>{i.name}</a>)}
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <a href={`${APP_URL}/pricing`}>Pricing</a>
+          {TOPICS.map((t) => <a key={t.slug} href={`${APP_URL}/${t.slug}`}>{t.nav}</a>)}
         </div>
         <div>
           <h4>Help</h4>

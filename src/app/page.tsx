@@ -6,12 +6,13 @@ import { PROMO_CSS } from '@/lib/promo';
 import { TvDemo, type DemoSlide } from '@/components/TvDemo';
 import { INDUSTRIES } from '@/lib/industries';
 import { RemoteManage } from '@/components/RemoteManage';
+import { CostCalculator } from '@/components/CostCalculator';
 import { pageMeta, JsonLd, faqLd, productLd, organizationLd } from '@/lib/seo';
 
 export const metadata: Metadata = pageMeta(
   '',
-  'Digital Signage NZ for Bars, Cafés, Gyms & Retail | myQR',
-  'Cloud digital signage for NZ venues. Put specials, events and announcements on the TVs you already have, scheduled by day and hour. From $39 a month.',
+  'Digital Signage NZ: Cheap, Easy TV Screens for Your Venue | myQR',
+  'Affordable, easy digital signage for NZ bars, cafés, gyms, clubs and shops. Use the TVs you have, update from your phone. One flat price: $39/month for up to 20 TVs.',
 );
 
 const DEMO: DemoSlide[] = [
@@ -27,6 +28,7 @@ function Ico({ d, c }: { d: string; c: string }) {
 
 const FAQ: [string, string][] = [
   ['Can I update the screens when I’m not at the venue?', 'Yes. Your dashboard works in any web browser, on your phone, tablet or laptop, from anywhere with internet. Upload adverts, change prices or pause a special and every TV updates within about a minute.'],
+  ['How much does digital signage cost?', 'With us: $39 NZD a month or $399 a year for up to 20 TVs in one venue, using the TVs you already have. No setup fee, no installer and no per-screen charges.'],
   ['What do I need?', 'A TV with a web browser, or any TV with a cheap streaming stick (Chromecast with Google TV or Fire TV Stick). Plus Wi-Fi. No special player box, no installer.'],
   ['How do I connect a TV?', `On the TV’s browser, go to ${APP_URL.replace(/^https?:\/\//, '')}/tv. It shows a 6-digit code. Type that code into your dashboard and the TV starts playing. It remembers itself after that, even after a power cut.`],
   ['How many TVs can I have?', 'One subscription covers every TV in your venue (up to 20). They all play the same playlist.'],
@@ -45,7 +47,7 @@ export default function Home() {
       <section className="lp-hero">
         <div className="wrap lp-hero-in">
           <div>
-            <span className="eyebrow">Your Venue, Your Vibe</span>
+            <span className="eyebrow">Your Venue, Your Vibe · Digital signage NZ</span>
             <h1>Powerful digital signage <span className="hl">that sells</span></h1>
             <p className="lede">Promote high-margin food and drink specials, events and announcements on the TVs you already have. All managed from your phone or laptop, wherever you are, for a ridiculously low price.</p>
             <div className="row">
@@ -83,6 +85,27 @@ export default function Home() {
       </section>
 
       <RemoteManage />
+
+      <section className="section wrap" id="why">
+        <div className="tp-body">
+          <div>
+            <span className="eyebrow">Cheap and easy, on purpose</span>
+            <h2>Digital signage without the price tag or the installer</h2>
+            <p className="muted rm-lede">Most digital signage is sold to chains: commercial screens, a player box behind every TV, an installer, and software charged per screen. A single venue doesn’t need any of that.</p>
+            <ul className="rm-points">
+              <li><b>One flat price for the venue.</b> $39 a month covers up to 20 TVs, in NZ dollars. No per-screen fees.</li>
+              <li><b>No hardware to buy.</b> Use the TVs you already have. Older TVs just need a Chromecast or Fire TV Stick.</li>
+              <li><b>No installer, no software to install.</b> Pair each TV with a 6-digit code in about a minute.</li>
+              <li><b>No contract.</b> Monthly plans cancel any time from your dashboard.</li>
+            </ul>
+            <div className="row" style={{ marginTop: 18 }}>
+              <Link className="btn ghost" href="/cheap-digital-signage">Why it’s cheaper</Link>
+              <Link className="btn ghost" href="/digital-signage-cost">Digital signage cost guide</Link>
+            </div>
+          </div>
+          <CostCalculator />
+        </div>
+      </section>
 
       <section className="section wrap" id="venues">
         <div className="section-head"><h2>Made for your kind of venue</h2><Link href="/for" className="small">See all →</Link></div>
