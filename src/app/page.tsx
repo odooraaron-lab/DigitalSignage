@@ -39,6 +39,7 @@ const FAQ: [string, string][] = [
   ['Can specials show only at certain times?', 'Yes. Every slide can have its own days and hours, like happy hour from 4 to 6 on weekdays, or brunch only on weekends. Outside those times it simply doesn’t play.'],
   ['What if the internet drops?', 'The TVs keep playing what they already have and pick up your changes when the connection comes back.'],
   ['Can I cancel?', 'Yes. The monthly plan can be cancelled any time from your dashboard. The yearly plan runs to the end of its year.'],
+  ['Can I show a QR code for Google reviews on the TVs?', 'Yes. Our sister site, myQR Review QR (reviews.myqr.co.nz), makes a Google review QR code slide sized for TVs, plus print-ready signs, for $5.99. Upload the slide like any image and customers can scan it from their seat.'],
 ];
 
 export default function Home() {
