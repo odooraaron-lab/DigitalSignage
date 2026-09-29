@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div className="lp">
       <style dangerouslySetInnerHTML={{ __html: PROMO_CSS }} />
-      <JsonLd data={[organizationLd(), productLd(), faqLd(FAQ)]} />
+      <JsonLd data={[organizationLd(), { '@context': 'https://schema.org', '@type': 'WebSite', name: 'myQR Digital Signage', alternateName: 'Digital Signage by myQR', url: APP_URL }, productLd(), faqLd(FAQ)]} />
       <SiteHead />
       <section className="lp-hero">
         <div className="wrap lp-hero-in">

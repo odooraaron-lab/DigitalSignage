@@ -6,7 +6,7 @@ export type DemoSlide = { style: PromoStyle; head: string; price?: string; detai
 export function TvDemo({ slides, venue = 'The Local' }: { slides: DemoSlide[]; venue?: string }) {
   const each = 4;
   return (
-    <div className="sg-wall" aria-hidden="true">
+    <div className="sg-wall" aria-hidden="true" data-nosnippet="">
       <div className="sg-tv">
         <div className="sg-tv-screen" style={{ ['--n' as string]: slides.length }}>
           {slides.map((d, i) => (
