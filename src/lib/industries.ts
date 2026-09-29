@@ -46,6 +46,7 @@ export const INDUSTRIES: Industry[] = [
     ],
     faq: [
       ['Can I still show the sport?', 'Yes. Use one TV for signage and keep the others on the game, or switch a TV’s input back to Sky whenever you need it. Signage carries on where it left off when you switch back.'],
+      ['Can customers put their own photos on our TVs for a function?', 'Yes. For 21sts, work dos and birthdays, point them to our sister service Wishcast (myqr.co.nz/photo-wall): guests scan a QR code and their photos play live on your TVs.'],
       ['Can specials change automatically for happy hour?', 'Yes. Every slide can have its own days and hours, so happy hour slides only show during happy hour.'],
     ],
   },
