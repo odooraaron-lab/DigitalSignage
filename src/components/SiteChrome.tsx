@@ -58,6 +58,7 @@ export function SiteFoot() {
         <div>
           <h4>Guides</h4>
           <a href={`${APP_URL}/pricing`}>Pricing</a>
+          <a href={`${APP_URL}/blog`}>Blog</a>
           {TOPICS.map((t) => <a key={t.slug} href={`${APP_URL}/${t.slug}`}>{t.nav}</a>)}
         </div>
         <div>
