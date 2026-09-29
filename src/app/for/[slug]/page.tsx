@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { SiteHead, SiteFoot } from '@/components/SiteChrome';
 import { TvDemo } from '@/components/TvDemo';
+import { RemoteManage } from '@/components/RemoteManage';
 import { INDUSTRIES, getIndustry } from '@/lib/industries';
 import { PROMO_CSS } from '@/lib/promo';
 import { PRICES, APP_URL } from '@/lib/config';
@@ -25,6 +26,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
   if (!i) notFound();
   const faq: [string, string][] = [
     ...i.faq,
+    ['Can I update it from home?', 'Yes. Log in from your phone or laptop anywhere with internet. Upload adverts or change a price and every TV in the venue updates within about a minute.'],
     ['What does it cost?', `${PRICES.monthly.label}, or ${PRICES.yearly.label}, for up to 20 TVs in one venue. No hardware to buy and no contract on the monthly plan.`],
     ['How do I connect a TV?', `Open ${tvAddress}/tv in the TV’s web browser (or on a Chromecast or Fire TV Stick). It shows a 6-digit code: type it into your dashboard and the TV starts playing.`],
   ];
@@ -49,7 +51,7 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
             </div>
             <ul className="lp-promise">
               <li>✓ Works on the TVs you have</li>
-              <li>✓ Update from your phone</li>
+              <li>✓ Update from your phone or laptop</li>
               <li>✓ Schedule by day and hour</li>
             </ul>
           </div>
@@ -63,6 +65,8 @@ export default function IndustryPage({ params }: { params: { slug: string } }) {
           {i.ideas.map((x) => <div key={x.h} className="feature"><h3>{x.h}</h3><p>{x.p}</p></div>)}
         </div>
       </section>
+
+      <RemoteManage compact />
 
       <section className="lp-dark">
         <div className="wrap sg-split">
